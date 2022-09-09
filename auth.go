@@ -14,17 +14,11 @@ import (
 const (
 	auth2Url      = "https://twitter.com/i/oauth2/authorize"
 	auth2TokenUrl = "https://api.twitter.com/2/oauth2/token"
-
-	// = "c0F3WVVSa04zWl9CNDIyLURGT2c6MTpjaQ"
-	// client_secret = "xnti0tH34WW2Ez24U4rMXwRHO1j-hCAJFW-QkzKSiK6SoiIB_4"
-	redirect_uri = "http://127.0.0.1:5000/twitback"
-	state        = "xyzABC1235"
-	state2       = "xyzABC1234567"
-)
-
-var (
-	client_id, _     = os.LookupEnv("CLIENT_ID")
-	client_secret, _ = os.LookupEnv("CLIENT_SECRET")
+	client_id     = "c0F3WVVSa04zWl9CNDIyLURGT2c6MTpjaQ"
+	client_secret = "xnti0tH34WW2Ez24U4rMXwRHO1j-hCAJFW-QkzKSiK6SoiIB_4"
+	redirect_uri  = "http://127.0.0.1:5000/twitback"
+	state         = "xyzABC1235"
+	state2        = "xyzABC1234567"
 )
 
 type scope struct {
@@ -64,6 +58,8 @@ type accessToken struct {
 }
 
 func (auth2 *Auth2ulrBuilder) generate() string {
+	client_id, _ := os.LookupEnv("CLIENT_ID")
+	client_secret, _ := os.LookupEnv("CLIENT_SECRET")
 
 	u, err := url.Parse(auth2.url)
 	if err != nil {

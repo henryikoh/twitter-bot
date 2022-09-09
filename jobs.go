@@ -28,7 +28,6 @@ type jobs struct {
 }
 
 func initJobs() *jobs {
-	app_token, _ := os.LookupEnv("APP_TOKEN")
 
 	var token accessToken
 	db := InitDAO()
@@ -52,7 +51,7 @@ func initJobs() *jobs {
 		id:        user.ID,
 		db:        db.db,
 		token:     newtoken,
-		appToken:  app_token,
+		appToken:  "AAAAAAAAAAAAAAAAAAAAANQHgQEAAAAA6AOvjbW2hIoxyeit0ectjVfkTgo%3DeTTtbPqq9Zu8R0NHVAwdz561yymC88dTeKOHjFRqHxv456nQBm",
 		rtalike:   make(chan *twitter.TweetMessage, 50),
 		vidlink:   make(chan *twitter.TweetMessage, 50),
 		president: make(chan *twitter.TweetMessage, 50),
