@@ -7,7 +7,6 @@ import (
 	"log"
 	"net/http"
 	"net/url"
-	"os"
 	"strings"
 )
 
@@ -58,8 +57,6 @@ type accessToken struct {
 }
 
 func (auth2 *Auth2ulrBuilder) generate() string {
-	client_id, _ := os.LookupEnv("CLIENT_ID")
-	client_secret, _ := os.LookupEnv("CLIENT_SECRET")
 
 	u, err := url.Parse(auth2.url)
 	if err != nil {
