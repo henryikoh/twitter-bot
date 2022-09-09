@@ -1,12 +1,12 @@
 steps:
  # build the container 
  - name: 'gcr.io/cloud-builders/docker'
-   args: ['build', '--network=cloudbuild','-t', 'gcr.io/twitter-bot/server', '.']
+   args: ['build', '--network=cloudbuild','-t', 'gcr.io/twitter-bot-362009/server', '.']
  # push the container image to Container Registry
  - name: 'gcr.io/cloud-builders/docker'
-   args: ['push', 'gcr.io/twitter-bot/server']
+   args: ['push', 'gcr.io/twitter-bot-362009/server']
  # Deploy container image to Cloud Run
  - name: 'gcr.io/cloud-builders/gcloud'
-   args: ['run', 'deploy', 'twitter-bot', '--image', 'gcr.io/twitter-bot/server', '--region', 'us-central1', '--platform', 'managed', '--allow-unauthenticated']
+   args: ['run', 'deploy', 'twitter-bot', '--image', 'gcr.io/twitter-bot-362009/server', '--region', 'us-central1', '--platform', 'managed', '--allow-unauthenticated']
 images: 
 - 'gcr.io/twitter-bot/server'
