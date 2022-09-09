@@ -137,6 +137,11 @@ func getAccesToken(code string) {
 		log.Fatal(result)
 	}
 
+	// run jobs
+	jobs := initJobs()
+
+	jobs.consumeStream()
+
 }
 func refreshAccesToken(refreshToken string) accessToken {
 	fmt.Println("refresh token hit")
