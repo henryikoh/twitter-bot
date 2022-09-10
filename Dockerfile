@@ -15,6 +15,6 @@ WORKDIR /app
 RUN go build -o /twitter-bot
 
 
-EXPOSE 8080
+EXPOSE 5000
 
 CMD [ "/twitter-bot" ]
