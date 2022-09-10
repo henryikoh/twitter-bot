@@ -36,6 +36,6 @@ func redirectHandler(data string) http.HandlerFunc {
 func runServer(data string) {
 	http.HandleFunc("/twitback", redirectHandler(data))
 	fmt.Println("listing on port 5000...")
-	http.ListenAndServe(":5000", nil)
+	http.ListenAndServe(":8080", nil)
 
 }
