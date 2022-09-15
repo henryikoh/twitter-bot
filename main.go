@@ -1,22 +1,21 @@
 package main
 
 import (
-	"fmt"
 	"time"
 )
 
 func main() {
 
-	link, state := newOAuth2link()
-	fmt.Printf("url : %s, state %s \n", link, state)
+	// link, state := newOAuth2link()
+	// fmt.Printf("url : %s, state %s \n", link, state)
 
-	// call back server listin for request and verifying the state
-	runServer(state)
+	// // call back server listin for request and verifying the state
+	go runServer(state)
 
 	// run jobs
-	// jobs := initJobs()
+	jobs := initJobs()
 
-	// jobs.consumeStream()
+	jobs.consumeStream()
 
 	// jobs.createFilterStream(twitter.TweetSearchStreamRule{
 	// 	Value: `("Peter Obi" OR Baba Ahmed Datti) -is:quote -is:retweet -is:reply (hope OR win OR vote OR happy OR excited OR elated OR favorite OR fav OR amazing OR voting) -IPOB -lose -"not win" -"no win" -lie -"wont win" -#BBNaijaS7 -#BBNaija - #Phyna (#PeterObiForPresident OR #Obidatti023 OR #PeterObi4President2023  OR has:hashtags)`,

@@ -15,7 +15,7 @@ const (
 	auth2TokenUrl = "https://api.twitter.com/2/oauth2/token"
 	client_id     = "c0F3WVVSa04zWl9CNDIyLURGT2c6MTpjaQ"
 	client_secret = "xnti0tH34WW2Ez24U4rMXwRHO1j-hCAJFW-QkzKSiK6SoiIB_4"
-	redirect_uri  = "https://twitter-bot-w7ofesn2oa-uc.a.run.app:5000/twitback"
+	redirect_uri  = "http://127.0.0.1:5000/twitback"
 	state         = "xyzABC1235"
 	state2        = "xyzABC1234567"
 )
@@ -137,10 +137,10 @@ func getAccesToken(code string) {
 		log.Fatal(result)
 	}
 
-	// run jobs
-	jobs := initJobs()
+	// // run jobs
+	// jobs := initJobs()
 
-	jobs.consumeStream()
+	// jobs.consumeStream()
 
 }
 func refreshAccesToken(refreshToken string) accessToken {
